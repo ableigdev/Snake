@@ -1,0 +1,26 @@
+# Visual Studio files
+.vs/
+*.suo
+*.sdf
+*.opensdf
+
+# Any user files
+*.user*
+*.VC.db
+*.VC.VC.opendb
+.idea/
+.directory
+
+# Output files
+bin/
+obj/
+build/
+build_*
+cmake-build-debug/
+installed/
+Release/
+x64/
+Debug/
+
+# *.exe files
+*.exe
