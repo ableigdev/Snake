@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\interfaces">
+      <UniqueIdentifier>{b530371e-0d18-4bde-9482-462b8e5ea4a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\snake_impl">
+      <UniqueIdentifier>{b6498872-59b2-4d3a-85c1-d1bd0823baf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\snake_impl\console_snake_impl">
+      <UniqueIdentifier>{a6c775f2-e623-4b31-ba07-d186389d33fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\snake_impl">
+      <UniqueIdentifier>{ce205d41-7a72-4ea2-bb8a-507f67d8ce05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\snake_impl\console_snake_impl">
+      <UniqueIdentifier>{ff9bbfa9-98b8-42e6-9667-4987587899ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\fruit_impl">
+      <UniqueIdentifier>{87ef6196-ed6c-41c6-bdab-5ea635d9f614}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\fruit_impl\console_fruit_impl">
+      <UniqueIdentifier>{59561d8b-94f2-4cde-a7e9-7bd4887f97ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\fruit_impl">
+      <UniqueIdentifier>{fa44638c-1d40-42df-b7bb-68dcadb89a98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\fruit_impl\console_fruit_impl">
+      <UniqueIdentifier>{735df0d0-2b94-4a44-a780-1f62703e3842}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\helpers">
+      <UniqueIdentifier>{77e10110-c4c2-4a92-a7f6-c0f2d445d49f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\snake_model_impl">
+      <UniqueIdentifier>{df924a23-3e57-4198-9663-c6379d2c2889}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\snake_model_impl">
+      <UniqueIdentifier>{521bf6d8-b6ee-4d37-9294-8ecd5cca4434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\helpers">
+      <UniqueIdentifier>{f0e0d49f-3e02-4714-b464-492f476b86c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\menu_impl">
+      <UniqueIdentifier>{1187681e-9606-470d-b90e-6d71628db5b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\menu_impl\console_menu_impl">
+      <UniqueIdentifier>{d39fa89d-0c8b-4c5e-8b24-e4f2c08d6cb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\menu_impl">
+      <UniqueIdentifier>{997868ea-f7f0-4491-9ca0-5203601040f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\menu_impl\console_menu_impl">
+      <UniqueIdentifier>{c3c2ee92-1014-40e2-878b-026c7a7be20c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\viewer_impl">
+      <UniqueIdentifier>{762f3de0-814b-476b-b9aa-1e1a2081c2e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\viewer_impl\console_viewer_impl">
+      <UniqueIdentifier>{7e945001-6f98-4206-9b90-24cc46f52d72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\controller_impl">
+      <UniqueIdentifier>{d8f73f40-7362-430a-985a-f734316cece0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\controller_impl">
+      <UniqueIdentifier>{086dc98c-6dcf-45a3-803b-2a66d645262a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\viewer_impl">
+      <UniqueIdentifier>{1b19b59c-4134-4497-bba2-ddd0080ade65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\viewer_impl\console_viewer_impl">
+      <UniqueIdentifier>{115b23a3-4322-4335-b74c-d58a54aaeeef}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IController.h">
+      <Filter>Header Files\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IViewer.h">
+      <Filter>Header Files\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ISnakeModel.h">
+      <Filter>Header Files\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IFruit.h">
+      <Filter>Header Files\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ISnake.h">
+      <Filter>Header Files\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IMenu.h">
+      <Filter>Header Files\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleSnakeImpl.h">
+      <Filter>Header Files\snake_impl\console_snake_impl</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleFruitImpl.h">
+      <Filter>Header Files\fruit_impl\console_fruit_impl</Filter>
+    </ClInclude>
+    <ClInclude Include="constants.h">
+      <Filter>Header Files\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeModelImpl.h">
+      <Filter>Header Files\snake_model_impl</Filter>
+    </ClInclude>
+    <ClInclude Include="move_to.h">
+      <Filter>Header Files\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleMenuImpl.h">
+      <Filter>Header Files\menu_impl\console_menu_impl</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleViewerImpl.h">
+      <Filter>Header Files\viewer_impl\console_viewer_impl</Filter>
+    </ClInclude>
+    <ClInclude Include="ControllerImpl.h">
+      <Filter>Header Files\controller_impl</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadWrapper.h">
+      <Filter>Header Files\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="SecondConsoleFruitImpl.h">
+      <Filter>Header Files\fruit_impl\console_fruit_impl</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoPlayControllerImpl.h">
+      <Filter>Header Files\controller_impl</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ConsoleSnakeImpl.cpp">
+      <Filter>Source Files\snake_impl\console_snake_impl</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleFruitImpl.cpp">
+      <Filter>Source Files\fruit_impl\console_fruit_impl</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SnakeModelImpl.cpp">
+      <Filter>Source Files\snake_model_impl</Filter>
+    </ClCompile>
+    <ClCompile Include="move_to.cpp">
+      <Filter>Source Files\helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleMenuImpl.cpp">
+      <Filter>Source Files\menu_impl\console_menu_impl</Filter>
+    </ClCompile>
+    <ClCompile Include="ControllerImpl.cpp">
+      <Filter>Source Files\controller_impl</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleViewerImpl.cpp">
+      <Filter>Source Files\viewer_impl\console_viewer_impl</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadWrapper.cpp">
+      <Filter>Source Files\helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="SecondConsoleFruitImpl.cpp">
+      <Filter>Source Files\fruit_impl\console_fruit_impl</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoPlayControllerImpl.cpp">
+      <Filter>Source Files\controller_impl</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
