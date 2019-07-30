@@ -82,6 +82,18 @@
     <Filter Include="Source Files\viewer_impl\console_viewer_impl">
       <UniqueIdentifier>{115b23a3-4322-4335-b74c-d58a54aaeeef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\factory_impl">
+      <UniqueIdentifier>{7ed470ab-ec9f-410c-9a35-06dc694ed775}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\factory_impl\console_factory_impl">
+      <UniqueIdentifier>{1442ad9f-d5a3-4de7-ae04-ab715e72a060}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\factory_impl">
+      <UniqueIdentifier>{212813d7-1b8a-4610-b8d8-784fe1d76fcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\factory_impl\console_factory_impl">
+      <UniqueIdentifier>{2867c411-8d71-4583-b4e3-20a9d3d5654a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IController.h">
@@ -135,6 +147,12 @@
     <ClInclude Include="AutoPlayControllerImpl.h">
       <Filter>Header Files\controller_impl</Filter>
     </ClInclude>
+    <ClInclude Include="IFactory.h">
+      <Filter>Header Files\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleFactoryImpl.h">
+      <Filter>Header Files\factory_impl\console_factory_impl</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleSnakeImpl.cpp">
@@ -169,6 +187,9 @@
     </ClCompile>
     <ClCompile Include="AutoPlayControllerImpl.cpp">
       <Filter>Source Files\controller_impl</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleFactoryImpl.cpp">
+      <Filter>Source Files\factory_impl\console_factory_impl</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

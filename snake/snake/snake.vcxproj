@@ -120,6 +120,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AutoPlayControllerImpl.h" />
+    <ClInclude Include="ConsoleFactoryImpl.h" />
     <ClInclude Include="ConsoleFruitImpl.h" />
     <ClInclude Include="ConsoleMenuImpl.h" />
     <ClInclude Include="ConsoleSnakeImpl.h" />
@@ -127,6 +128,7 @@
     <ClInclude Include="constants.h" />
     <ClInclude Include="ControllerImpl.h" />
     <ClInclude Include="IController.h" />
+    <ClInclude Include="IFactory.h" />
     <ClInclude Include="IFruit.h" />
     <ClInclude Include="IMenu.h" />
     <ClInclude Include="ISnake.h" />
@@ -139,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AutoPlayControllerImpl.cpp" />
+    <ClCompile Include="ConsoleFactoryImpl.cpp" />
     <ClCompile Include="ConsoleFruitImpl.cpp" />
     <ClCompile Include="ConsoleMenuImpl.cpp" />
     <ClCompile Include="ConsoleSnakeImpl.cpp" />
