@@ -4,6 +4,7 @@
 #include <Windows.h>
 #include <functional>
 #include "IMenu.h"
+#include "IFactory.h"
 
 namespace menu_impl::console_menu_impl
 {
@@ -29,6 +30,7 @@ namespace menu_impl::console_menu_impl
         POINT chooseSizeOfField();
 
     private:
+        std::unique_ptr<interfaces::IFactory> m_ConsoleFactory;
         int m_Index;
         int m_Key;
         HANDLE m_StdHandle;

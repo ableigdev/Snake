@@ -6,18 +6,14 @@
 #include "ConsoleMenuImpl.h"
 #include "move_to.h"
 #include "constants.h"
-
-#include "IFruit.h"
-#include "ConsoleFruitImpl.h"
-#include "ConsoleSnakeImpl.h"
-#include "ConsoleViewerImpl.h"
+#include "ConsoleFactoryImpl.h"
 #include "ControllerImpl.h"
 #include "SnakeModelImpl.h"
-#include "SecondConsoleFruitImpl.h"
 #include "AutoPlayControllerImpl.h"
 
 menu_impl::console_menu_impl::ConsoleMenuImpl::ConsoleMenuImpl()
     : IMenu(),
+    m_ConsoleFactory(std::make_unique<factory_impl::console_factory_impl::ConsoleFactoryImpl>()),
     m_Index(1),
     m_Key(0)
 {
@@ -144,14 +140,9 @@ void menu_impl::console_menu_impl::ConsoleMenuImpl::start()
     // Initialize all components for the new game
     POINT sizeOfField = chooseSizeOfField();
 
-    auto fruit(std::make_unique<fruit_impl::console_fruit_impl::ConsoleFruitImpl>());
-    auto secondFruit(std::make_unique<fruit_impl::console_fruit_impl::SecondConsoleFruitImpl>());
-    std::vector <std::unique_ptr<interfaces::IFruit>> fruits;
-    fruits.push_back(std::move(fruit));
-    fruits.push_back(std::move(secondFruit));
-
-    auto snake(std::make_unique<snake_impl::console_snake_impl::ConsoleSnakeImpl>());
-    auto viewer(std::make_unique<viewer_impl::console_viewer_impl::ConsoleViewerImpl>(std::move(snake), std::move(fruits)));
+    auto fruits(m_ConsoleFactory->createFruits());
+    auto snake(m_ConsoleFactory->createSnake());
+    auto viewer(m_ConsoleFactory->createViewer(std::move(snake), std::move(fruits)));
     auto model(std::make_unique<snake_model_impl::SnakeModelImpl>(sizeOfField.x, sizeOfField.y));
     auto controller(std::make_unique<controller_impl::ControllerImpl>(std::move(viewer), std::move(model)));
 
@@ -352,14 +343,9 @@ void menu_impl::console_menu_impl::ConsoleMenuImpl::autoPlay()
     // Initialize all components for the new game
     POINT sizeOfField = chooseSizeOfField();
 
-    auto fruit(std::make_unique<fruit_impl::console_fruit_impl::ConsoleFruitImpl>());
-    auto secondFruit(std::make_unique<fruit_impl::console_fruit_impl::SecondConsoleFruitImpl>());
-    std::vector <std::unique_ptr<interfaces::IFruit>> fruits;
-    fruits.push_back(std::move(fruit));
-    fruits.push_back(std::move(secondFruit));
-
-    auto snake(std::make_unique<snake_impl::console_snake_impl::ConsoleSnakeImpl>());
-    auto viewer(std::make_unique<viewer_impl::console_viewer_impl::ConsoleViewerImpl>(std::move(snake), std::move(fruits)));
+    auto fruits(m_ConsoleFactory->createFruits());
+    auto snake(m_ConsoleFactory->createSnake());
+    auto viewer(m_ConsoleFactory->createViewer(std::move(snake), std::move(fruits)));
     auto model(std::make_unique<snake_model_impl::SnakeModelImpl>(sizeOfField.x, sizeOfField.y));
     auto controller(std::make_unique<controller_impl::AutoPlayControllerImpl>(std::move(viewer), std::move(model)));
 
