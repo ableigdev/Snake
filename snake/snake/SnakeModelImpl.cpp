@@ -93,7 +93,7 @@ int snake_model_impl::SnakeModelImpl::getPoint(size_t x, size_t y) const
     }
     else
     {
-        throw std::out_of_range("Out of range in the 'operator()'");
+        throw std::out_of_range("Out of range in the 'getPoint' method");
     }
 }
 
