@@ -9,6 +9,8 @@
 #include "ConsoleSnakeImpl.h"
 #include "ConsoleFruitImpl.h"
 #include "SecondConsoleFruitImpl.h"
+#include "SnakeModelImpl.h"
+#include "constants.h"
 
 TEST(FactoryTest, Test1)
 {
@@ -103,6 +105,81 @@ TEST(ConsoleViewerImpl, Score)
     EXPECT_EQ(consoleViewer->score(), 0);
     consoleViewer->updateScore(15);
     EXPECT_EQ(consoleViewer->score(), 15);
+}
+
+TEST(SnakeModelImpl, SizeOfMatrix)
+{
+    auto model(std::make_unique<snake_model_impl::SnakeModelImpl>(30, 24));
+
+    EXPECT_EQ(model->getValueOfXSize(), 30);
+    EXPECT_EQ(model->getValueOfYSize(), 24);
+}
+
+TEST(SnakeModelImpl, GetPoint)
+{
+    auto model(std::make_unique<snake_model_impl::SnakeModelImpl>(30, 24));
+
+    EXPECT_EQ(model->getPoint(0, 0), helpers::tagsOfTheGameSpace::WALL);
+    EXPECT_EQ(model->getPoint(3, 3), helpers::tagsOfTheGameSpace::FREE_SPACE);
+}
+
+TEST(SnakeModelImpl, GetPointException)
+{
+    auto model(std::make_unique<snake_model_impl::SnakeModelImpl>(30, 24));
+
+    EXPECT_THROW(model->getPoint(31, 25), std::out_of_range);
+}
+
+TEST(SnakeModelImpl, AddPoint)
+{
+    auto model(std::make_unique<snake_model_impl::SnakeModelImpl>(30, 24));
+
+    model->addPoint(3, 3, helpers::tagsOfTheGameSpace::FRUIT);
+    model->addPoint(4, 4, helpers::tagsOfTheGameSpace::SNAKE_TAIL);
+    model->addPoint(4, 5, helpers::tagsOfTheGameSpace::SNAKE_BODY);
+    model->addPoint(4, 6, helpers::tagsOfTheGameSpace::SNAKE_HEAD);
+
+    EXPECT_EQ(model->getPoint(3, 3), helpers::tagsOfTheGameSpace::FRUIT);
+    EXPECT_EQ(model->getPoint(4, 4), helpers::tagsOfTheGameSpace::SNAKE_TAIL);
+    EXPECT_EQ(model->getPoint(4, 5), helpers::tagsOfTheGameSpace::SNAKE_BODY);
+    EXPECT_EQ(model->getPoint(4, 6), helpers::tagsOfTheGameSpace::SNAKE_HEAD);
+}
+
+TEST(SnakeModelImpl, AddPointToWall)
+{
+    auto model(std::make_unique<snake_model_impl::SnakeModelImpl>(30, 24));
+
+    model->addPoint(0, 0, helpers::tagsOfTheGameSpace::FRUIT);
+
+    EXPECT_NE(model->getPoint(0, 0), helpers::tagsOfTheGameSpace::FRUIT);
+    EXPECT_EQ(model->getPoint(0, 0), helpers::tagsOfTheGameSpace::WALL);
+}
+
+TEST(SnakeModelImpl, DeletePoint)
+{
+    auto model(std::make_unique<snake_model_impl::SnakeModelImpl>(30, 24));
+
+    model->addPoint(3, 3, helpers::tagsOfTheGameSpace::FRUIT);
+    EXPECT_EQ(model->getPoint(3, 3), helpers::tagsOfTheGameSpace::FRUIT);
+
+    model->deletePoint(3, 3);
+    EXPECT_EQ(model->getPoint(3, 3), helpers::tagsOfTheGameSpace::FREE_SPACE);
+}
+
+TEST(SnakeModelImpl, DeletePointException)
+{
+    auto model(std::make_unique<snake_model_impl::SnakeModelImpl>(30, 24));
+
+    EXPECT_THROW(model->deletePoint(50, 25), std::out_of_range);
+}
+
+TEST(SnakeModelImpl, DeletePointTheWall)
+{
+    auto model(std::make_unique<snake_model_impl::SnakeModelImpl>(30, 24));
+    model->deletePoint(0, 0);
+
+    EXPECT_EQ(model->getPoint(0, 0), helpers::tagsOfTheGameSpace::WALL);
+    EXPECT_NE(model->getPoint(0, 0), helpers::tagsOfTheGameSpace::FREE_SPACE);
 }
 
 int main(int argc, char** argv)
